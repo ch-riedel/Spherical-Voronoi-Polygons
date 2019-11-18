@@ -31,13 +31,17 @@ scipy<br>
 
 The script uses the polygon vertices that are determined by the SpericalVoronoi function from the scipy library to generate the geodesic Voronoi polygon boundaries. However, I noticed that the SphericalVoronoi function (as of November 2019) has difficulties to calculate the correct polygon vertices when the number of input points are low. This usually happens when at least one polygon is very large (larger than one hemisphere). The likelyhood that we end up with a Voronoi polygon of such size increases, the fewer input points we have. To quantify this, I investigated the rate of failed Voronoi polygon constructions as a function of the number of input points. I did 1000 runs for each randomly distributed set of input points. The error rate reached 0.0% (0 out of 1000 randomly distributed test sets yielded in wrongly determined Voronoi polygons) when the number of input points was at least 20. For this reason, the number of input points should be 20 or more.
 
+![Scipy SphericalVoronoi Errors](https://github.com/ch-riedel/Spherical-Voronoi-Polygons/blob/master/Figures/Scipy_Spherical_Volygon_errors_plot.png)
+
 ## Examples - Voronoi polygons from 1000 randomly located points on a sphere with Earth-like dimensions
 
-
+![Equirectangular projection](https://github.com/ch-riedel/Spherical-Voronoi-Polygons/blob/master/Figures/1000_Plate_Carre.png)
 Equirectangular projection
 
+![Mollweide projection](https://github.com/ch-riedel/Spherical-Voronoi-Polygons/blob/master/Figures/1000_Mollweide_Nearside.png)
 Mollweide projection (centered at 0°;0°)
 
+![Lambert Azimuthal Equal Area (cetered at the North Pole)](https://github.com/ch-riedel/Spherical-Voronoi-Polygons/blob/master/Figures/1000_LAEA_NP.png)
 Lambert Azimuthal Equal Area (cetered at the North Pole)
 
 
